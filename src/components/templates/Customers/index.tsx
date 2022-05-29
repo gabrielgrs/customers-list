@@ -12,6 +12,7 @@ const CustomersTemplate = ({
   list,
   onLoadMore,
   canLoadMore,
+  onSelectToRemove,
 }: T.CustomersTemplate) => {
   const { push } = useRouter()
 
@@ -29,8 +30,8 @@ const CustomersTemplate = ({
           <List size={20} />
         </S.ActionButton>
       </S.Actions>
-      {gridStyle === 'list' && <ListView list={list} />}
-      {gridStyle === 'cards' && <GridView list={list} />}
+      {gridStyle === 'list' && <ListView list={list} onSelectToRemove={onSelectToRemove} />}
+      {gridStyle === 'cards' && <GridView list={list} onSelectToRemove={onSelectToRemove} />}
       {canLoadMore && (
         <S.LoadMoreButtonWrapper key={list.length}>
           <Button onClick={onLoadMore}>Carregar mais</Button>
