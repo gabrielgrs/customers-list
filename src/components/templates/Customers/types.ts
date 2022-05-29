@@ -8,4 +8,5 @@ export type CustomersTemplate = {
   list: Customer[]
   onLoadMore: () => void
   canLoadMore: boolean
+  onSelectToRemove: (customerId: number) => void
 }

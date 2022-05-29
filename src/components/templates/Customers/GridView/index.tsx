@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { Edit, Trash } from 'react-feather'
-import type { Customer } from 'types/shared'
 import ActionIcon from 'components/ActionIcon'
 import * as S from './styles'
+import type * as T from './types'
 
-const GridView = ({ list }: { list: Customer[] }) => {
+const GridView = ({ list, onSelectToRemove }: T.GridView) => {
   return (
     <S.Grid>
       {list.map((customer) => (
@@ -30,7 +30,7 @@ const GridView = ({ list }: { list: Customer[] }) => {
               </a>
             </Link>
 
-            <ActionIcon backgroundColor="danger" onClick={() => alert('remove')}>
+            <ActionIcon backgroundColor="danger" onClick={() => onSelectToRemove(customer.id)}>
               <Trash />
             </ActionIcon>
           </S.Actions>

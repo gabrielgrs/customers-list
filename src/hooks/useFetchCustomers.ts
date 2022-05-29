@@ -9,7 +9,7 @@ const useFetchCustomers = (perPage: number) => {
   const [data, setData] = useState<Customer[]>([])
   const { addToast } = useToasts()
 
-  const onFetch = useCallback(
+  const refetch = useCallback(
     async (itemsPerPage: number) => {
       try {
         const { data, headers } = await getCustomers(itemsPerPage)
@@ -24,14 +24,15 @@ const useFetchCustomers = (perPage: number) => {
   )
 
   useEffect(() => {
-    onFetch(perPage)
-  }, [onFetch, perPage])
+    refetch(perPage)
+  }, [refetch, perPage])
 
   return {
     canLoadMore,
     loading: !data.length && !error,
     data,
     error,
+    refetch,
   }
 }
 

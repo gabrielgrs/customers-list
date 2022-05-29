@@ -1,10 +1,10 @@
-import type { Customer } from 'types/shared'
 import { Trash, Edit } from 'react-feather'
 import Link from 'next/link'
 import ActionIcon from 'components/ActionIcon'
 import * as S from './styles'
+import type * as T from './types'
 
-const ListView = ({ list }: { list: Customer[] }) => {
+const ListView = ({ list, onSelectToRemove }: T.ListView) => {
   return (
     <S.Grid>
       {list.map((customer) => (
@@ -30,7 +30,7 @@ const ListView = ({ list }: { list: Customer[] }) => {
               </a>
             </Link>
 
-            <ActionIcon backgroundColor="danger" onClick={() => alert('remove')}>
+            <ActionIcon backgroundColor="danger" onClick={() => onSelectToRemove(customer.id)}>
               <Trash />
             </ActionIcon>
           </S.Actions>

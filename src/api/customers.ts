@@ -10,4 +10,4 @@ export const getCustomers = (perPage: number) => api.get(`/customers/get?perPage
 
 export const getCustomerById = (id: number) => api.get(`/customers/getById?customerId=${id}`)
 
-export const removeCustomer = (id: number) => api.delete(`/customers/delete?customerId=${id}`)
+export const removeCustomer = (id: number) => api.delete(`/customers/remove?customerId=${id}`)
