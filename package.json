@@ -11,7 +11,8 @@
     "prettier": "prettier --loglevel silent --write .",
     "prepare": "husky install",
     "postinstall": "husky install",
-    "test": "jest --maxWorkers=50%"
+    "test": "jest --maxWorkers=50%",
+    "test:ci": "jest --runInBand"
   },
   "husky": {
     "hooks": {
