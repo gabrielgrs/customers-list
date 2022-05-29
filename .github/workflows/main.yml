@@ -21,6 +21,18 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
 
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Linting
+        run: yarn lint
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Test
+        run: yarn test:ci
+
       - name: 'Deploy to Vercel'
         run: |
           prodRun=""
