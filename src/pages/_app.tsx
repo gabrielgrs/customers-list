@@ -1,7 +1,9 @@
-import '../styles/globals.css'
 import { Fragment } from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
+import { lightTheme } from 'styles/theme'
+import Globals from 'styles/Globals'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +13,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="Customers List" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={lightTheme}>
+        <Globals />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </Fragment>
   )
 }

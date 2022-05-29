@@ -1,5 +1,6 @@
-import { ButtonHTMLAttributes } from 'react'
+import * as S from './styles'
+import type * as T from './types'
 
-const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => <button {...props} />
+const Button = (props: T.Button) => <S.Button {...props} />
 
 export default Button
