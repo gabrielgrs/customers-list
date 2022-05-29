@@ -23,7 +23,7 @@ export const Actions = styled.div`
   gap: 16px;
 `
 
-export const ActionButton = styled.button`
+export const ActionButton = styled.button<{ isActive: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,9 @@ export const ActionButton = styled.button`
   height: 24px;
   width: 24px;
   border-radius: 3px;
+  transition: 400ms ease;
+
+  opacity: ${({ isActive }) => (isActive ? '1' : '0.5')};
 `
 
 export const LoadMoreButtonWrapper = styled.div`

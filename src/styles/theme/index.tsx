@@ -14,7 +14,7 @@ const contrasts = {
   black: colors.white,
   white: colors.black,
   success: colors.white,
-  warning: colors.black,
+  warning: colors.white,
   danger: colors.white,
   silver: colors.black,
 }
@@ -36,6 +36,9 @@ export const lightTheme = {
     ...colors,
     black: '#282828',
   },
+  contrasts: {
+    ...contrasts,
+  },
 }
 
 export const darkTheme = {
@@ -44,6 +47,10 @@ export const darkTheme = {
     ...colors,
     black: colors.white,
     white: colors.black,
+  },
+  contrasts: {
+    ...contrasts,
+    white: colors.white,
   },
 }
 

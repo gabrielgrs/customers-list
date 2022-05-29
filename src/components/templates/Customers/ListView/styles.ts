@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { rgba } from 'polished'
 
 export const fromLeft = keyframes`
   from {
@@ -20,9 +21,10 @@ export const fromRight = keyframes`
   }
 `
 
-export const Item = styled.div`
-  border: solid 1px #ccc;
-  padding: 32px;
+export const Informations = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 `
 
 export const Grid = styled.div`
@@ -38,5 +40,24 @@ export const Grid = styled.div`
 
   > :nth-child(even) {
     animation: ${fromRight} 1s;
+    background: ${({ theme }) => rgba(theme.colors.black, 0.03)};
   }
+`
+
+export const Item = styled.div`
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px transparent;
+  transition: 400ms;
+
+  &:hover {
+    border: solid 1px #ccc;
+  }
+`
+
+export const Actions = styled.div`
+  display: flex;
+  gap: 8px;
 `

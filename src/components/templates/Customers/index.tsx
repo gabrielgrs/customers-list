@@ -15,15 +15,15 @@ const CustomersTemplate = ({
   return (
     <S.Main>
       <S.Actions>
-        <S.ActionButton onClick={() => onChangeGridStyle('cards')}>
+        <S.ActionButton isActive={gridStyle === 'cards'} onClick={() => onChangeGridStyle('cards')}>
           <Grid size={20} />
         </S.ActionButton>
-        <S.ActionButton onClick={() => onChangeGridStyle('list')}>
+        <S.ActionButton isActive={gridStyle === 'list'} onClick={() => onChangeGridStyle('list')}>
           <List size={20} />
         </S.ActionButton>
       </S.Actions>
-      {gridStyle === 'cards' && <ListView list={list} />}
-      {gridStyle === 'list' && <GridView list={list} />}
+      {gridStyle === 'list' && <ListView list={list} />}
+      {gridStyle === 'cards' && <GridView list={list} />}
       {canLoadMore && (
         <S.LoadMoreButtonWrapper key={list.length}>
           <Button onClick={onLoadMore}>Carregar mais</Button>
