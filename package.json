@@ -10,7 +10,8 @@
     "lint": "eslint src --max-warnings=0",
     "prettier": "prettier --loglevel silent --write .",
     "prepare": "husky install",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test": "jest --maxWorkers=50%"
   },
   "husky": {
     "hooks": {
@@ -20,9 +21,13 @@
   "lint-staged": {
     "src/**/*": [
       "yarn prettier",
-      "typecheck",
-      "yarn lint"
+      "yarn lint",
+      "yarn test --findRelatedTests --bail"
     ]
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -30,18 +35,20 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.36",
-    "@types/react": "18.0.9",
-    "@types/react-dom": "18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
-    "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6",
-    "eslint-plugin-import-helpers": "^1.2.1",
-    "eslint-plugin-react": "^7.30.0",
-    "husky": "^8.0.1",
+    "@babel/preset-typescript": "7.14.5",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@testing-library/react-hooks": "7.0.1",
+    "@types/jest": "26.0.24",
+    "@typescript-eslint/eslint-plugin": "4.31.0",
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1",
+    "eslint-plugin-import-helpers": "1.1.0",
+    "husky": "8.0.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "27.0.6",
     "lint-staged": "^12.4.2",
-    "prettier": "^2.6.2",
-    "typescript": "4.7.2"
+    "prettier": "2.6.2",
+    "typescript": "4.3.5"
   }
 }
