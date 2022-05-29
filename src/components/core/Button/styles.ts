@@ -10,8 +10,13 @@ export const Button = styled.button<T.Button>`
   border-radius: 4px;
   text-transform: uppercase;
   transition: 400ms;
-  opacity: ${({ disabled }) => disabled && '0.7'};
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
+  width: ${({ fullWidth }) => fullWidth && '100%'};
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: saturate(30%);
+  }
 
   &:hover {
     opacity: 0.7;
