@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionIcon /> should match snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-transition: 400ms linear;
+  transition: 400ms linear;
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: #0bb58d;
+  color: #fefefe;
+  border: none;
+}
+
+.c0:hover {
+  opacity: 0.7;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Action Icon
+  </button>
+</div>
+`;
