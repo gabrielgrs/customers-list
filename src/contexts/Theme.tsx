@@ -4,7 +4,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from 'styles/theme'
 import * as T from './types'
 
-const ThemeContext = createContext<T.ThemeContext>({
+export const ThemeContext = createContext<T.ThemeContext>({
   isDarkTheme: false,
   onSetIsDarkTheme: () => null,
 })
