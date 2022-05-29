@@ -6,7 +6,7 @@ import nookies from 'nookies'
 import ThemeProvider from 'contexts/Theme'
 import { ToastProvider } from 'react-toast-notifications'
 import Globals from 'styles/Globals'
-import Layout from 'components/Layout'
+import Layout, { ComponentWrapper } from 'components/Layout'
 import Navbar from 'components/Navbar'
 import Footer from 'components/Footer'
 
@@ -22,12 +22,14 @@ function MyApp({
         <meta name="description" content="Customers List" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ToastProvider>
+      <ToastProvider autoDismiss autoDismissTimeout={5000}>
         <ThemeProvider startWithDarkTheme={startWithDarkTheme}>
           <Globals />
           <Layout>
             <Navbar />
-            <Component {...pageProps} />
+            <ComponentWrapper>
+              <Component {...pageProps} />
+            </ComponentWrapper>
             <Footer />
           </Layout>
         </ThemeProvider>

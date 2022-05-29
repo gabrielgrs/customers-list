@@ -22,7 +22,7 @@ const ListView = ({ list }: { list: Customer[] }) => {
             </span>
           </S.Informations>
           <S.Actions>
-            <Link href={`/cliente/editar/${customer.id}`}>
+            <Link href={`/clientes/editar/${customer.id}`}>
               <a>
                 <ActionIcon backgroundColor="warning">
                   <Edit />
