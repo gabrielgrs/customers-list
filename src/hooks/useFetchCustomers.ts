@@ -3,7 +3,7 @@ import type { Customer } from 'types/shared'
 import { useToasts } from 'react-toast-notifications'
 import { getCustomers } from 'api/customers'
 
-const useFetchCustomers = (page: number) => {
+const useFetchCustomers = (perPage: number) => {
   const [canLoadMore, setCanLoadMore] = useState(false)
   const [error, setError] = useState<unknown>(undefined)
   const [data, setData] = useState<Customer[]>([])
@@ -24,8 +24,8 @@ const useFetchCustomers = (page: number) => {
   )
 
   useEffect(() => {
-    onFetch(page)
-  }, [onFetch, page])
+    onFetch(perPage)
+  }, [onFetch, perPage])
 
   return {
     canLoadMore,

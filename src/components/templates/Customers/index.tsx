@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { List, Grid } from 'react-feather'
 import Button from 'components/core/Button'
 import GridView from './GridView'
@@ -12,8 +13,14 @@ const CustomersTemplate = ({
   onLoadMore,
   canLoadMore,
 }: T.CustomersTemplate) => {
+  const { push } = useRouter()
+
   return (
     <S.Main>
+      <S.Spaced>
+        <h1>Lista de clientes</h1>
+        <Button onClick={() => push('/clientes/cadastrar')}>Cadastrar novo Cliente</Button>
+      </S.Spaced>
       <S.Actions>
         <S.ActionButton isActive={gridStyle === 'cards'} onClick={() => onChangeGridStyle('cards')}>
           <Grid size={20} />

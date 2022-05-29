@@ -11,7 +11,6 @@ const buttonAppears = keyframes`
 `
 
 export const Main = styled.main`
-  padding: 32px 3%;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -36,6 +35,13 @@ export const ActionButton = styled.button<{ isActive: boolean }>`
   transition: 400ms ease;
 
   opacity: ${({ isActive }) => (isActive ? '1' : '0.5')};
+`
+
+export const Spaced = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0;
 `
 
 export const LoadMoreButtonWrapper = styled.div`

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useRef } from 'react'
+import Link from 'next/link'
 import useThemeContext from 'hooks/useThemeContext'
 import Toggle from '../core/Toggle'
 import * as S from './styles'
@@ -10,7 +11,11 @@ const Navbar = () => {
 
   return (
     <S.Nav ref={ref}>
-      <Image src="/assets/logo.svg" height="25px" width="25px" alt="logo" priority />
+      <Link href="/">
+        <a>
+          <Image src="/assets/logo.svg" height="25px" width="25px" alt="logo" priority />
+        </a>
+      </Link>
 
       <Toggle
         name="isDarkMode"

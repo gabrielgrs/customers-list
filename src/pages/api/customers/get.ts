@@ -3,11 +3,11 @@ import supabase from '../services/supabase'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { perPage = 10 } = req.query
+    const { perPage } = req.query
     const { data, count, error } = await supabase
       .from('customers')
       .select('id, name, email', { count: 'exact' })
-      .range(0, Number(perPage))
+      .range(0, Number(perPage) - 1)
 
     if (error) throw error
 
