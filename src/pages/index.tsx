@@ -1,7 +1,14 @@
-import type { NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 
-const Home: NextPage = () => {
-  return <main>Hello world</main>
+const Index: NextPage = () => null
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: '/clientes',
+      permanent: false,
+    },
+  }
 }
 
-export default Home
+export default Index

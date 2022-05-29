@@ -4,6 +4,7 @@ import type { NextPageContext } from 'next'
 import Head from 'next/head'
 import nookies from 'nookies'
 import ThemeProvider from 'contexts/Theme'
+import { ToastProvider } from 'react-toast-notifications'
 import Globals from 'styles/Globals'
 import Layout from 'components/Layout'
 import Navbar from 'components/Navbar'
@@ -21,14 +22,16 @@ function MyApp({
         <meta name="description" content="Customers List" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ThemeProvider startWithDarkTheme={startWithDarkTheme}>
-        <Globals />
-        <Layout>
-          <Navbar />
-          <Component {...pageProps} />
-          <Footer />
-        </Layout>
-      </ThemeProvider>
+      <ToastProvider>
+        <ThemeProvider startWithDarkTheme={startWithDarkTheme}>
+          <Globals />
+          <Layout>
+            <Navbar />
+            <Component {...pageProps} />
+            <Footer />
+          </Layout>
+        </ThemeProvider>
+      </ToastProvider>
     </Fragment>
   )
 }
