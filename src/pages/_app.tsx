@@ -5,6 +5,9 @@ import Head from 'next/head'
 import nookies from 'nookies'
 import ThemeProvider from 'contexts/Theme'
 import Globals from 'styles/Globals'
+import Layout from 'components/Layout'
+import Navbar from 'components/Navbar'
+import Footer from 'components/Footer'
 
 function MyApp({
   Component,
@@ -20,7 +23,11 @@ function MyApp({
       </Head>
       <ThemeProvider startWithDarkTheme={startWithDarkTheme}>
         <Globals />
-        <Component {...pageProps} />
+        <Layout>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </Layout>
       </ThemeProvider>
     </Fragment>
   )
