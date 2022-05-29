@@ -11,7 +11,14 @@
       "warn",
       {
         "newlinesBetween": "never",
-        "groups": ["module", "/^@/", ["parent", "sibling", "index"]]
+        "groups": [
+          "module",
+          "/^utils/",
+          "/^styles/",
+          "/^hooks/",
+          "/^components/",
+          ["parent", "sibling", "index"]
+        ]
       }
     ]
   }
