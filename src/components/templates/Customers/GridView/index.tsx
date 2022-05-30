@@ -16,9 +16,9 @@ const GridView = ({ list, onSelectToRemove }: T.GridView) => {
               {customer.name}
             </span>
             <span>
-              <strong>Nome:</strong>
+              <strong>E-mail:</strong>
               <br />
-              {customer.name}
+              {customer.email}
             </span>
           </S.Informations>
           <S.Actions>
